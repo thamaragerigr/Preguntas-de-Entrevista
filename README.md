@@ -18,14 +18,56 @@ Significa **_añadir un event listener a un elemento padre_**, en lugar de añad
 - Solo se **_necesita un 'handler' en el elemento padre_**, en lugar de añadir uno a cada descendiente.
 - No hay necesidad de **_desconectar el 'handler'_** si algun elemento descendiente es eliminado.
 
+```
+<ul class=”characters”>
+</ul>
+<script>
+  function toggleDone (event) {
+    console.log(event.target)
+  }
+  const characterList = document.querySelector('.characters')
+  characterList.addEventListener('click', toggleDone)
+</script>
+```
+
+> ⛔ Se le añade un event listener al padre para los elementos que serán añadidos después de que la página carge
+
 [What is event delegation?](https://medium.com/@bretdoucette/part-4-what-is-event-delegation-in-javascript-f5c8c0de2983)
 
 ## ¿Cómo funciona el 'this'?
 
-**El objeto contexto de JavaScript en el cual se está ejecutando el código actual.** Su valor dependerá de como sea llamada la función.
+**El objeto contexto de JavaScript en el cual se está ejecutando el código actual.** Su valor dependerá de como sea llamada la función. 
 
-1. If the `new` keyword is used when calling the function, `this` inside the function is a **brand new object.**
-2. If `apply`, `call`, or `bind` are used to call/create a function, `this` inside the function is **the object that is passed in as the argument.**
+Se puede generalizar su uso bajo las siguientes reglas:
+
+1. Si la palabra `new`es usada para llamar una función, el `this` dentro de la función es un nuevo objeto.
+
+```
+function ConstructorExample() {
+    console.log(this);
+    this.value = 10;
+    console.log(this);
+}
+new ConstructorExample();
+// -> {}
+// -> { value: 10 }
+```
+
+2. Si applay`,`call` o `bind` son usados para llamar a una función, el `this` dentro de ella es un objeto que es pasado como argumento.
+
+```
+function fn() {
+    console.log(this);
+}
+var obj = {
+    value: 5
+};
+var boundFn = fn.bind(obj);
+boundFn();     // -> { value: 5 }
+fn.call(obj);  // -> { value: 5 }
+fn.apply(obj); // -> { value: 5 }
+``` 
+
 3. If a function is called as a method, such as `obj.method()` — `this` is the **object that the function is a property of**.
 4. If a function is invoked as a free function invocation, meaning it was invoked without any of the conditions present above, `this` is the **global object**. In a browser, it is the `window` object. If in strict mode (`'use strict'`), `this` will be `undefined` instead of the global object.
 5. If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.

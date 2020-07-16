@@ -1,4 +1,4 @@
-¿Qué has aprendido en esta semana?
+<!-- ¿Qué has aprendido en esta semana?
 ¿Qué es lo que te interesa de la programación?
 ¿Podría describir algún problema técnico que haya resuelto recientemente?
 ¿Cuáles son las consideraciones del área de interfaces, rendimiento, posicionamiento, mantenimiento o seguridad que toma en cuenta al desarrollar sitios o aplicaciones web?
@@ -21,4 +21,4 @@ Explique las ventajas y desventajas de usar animaciones en CSS contrario a usar 
 
 ### ¿Qué significa CORS y a qué problema está relacionado?
 
-Cross-Origin Resource Sharing (CORS)
+Cross-Origin Resource Sharing (CORS) -->

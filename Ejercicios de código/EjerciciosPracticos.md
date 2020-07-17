@@ -113,6 +113,43 @@
 
 [Fuente aquí](https://www.codewars.com/kata/57356c55867b9b7a60000bd7)
 
+7. **Es divisible**: Crea una función que chequee si un número es divisible entre los parametro x, y dados.
+
+*Ejemplo:*
+
+    n =  12, x = 2, y = 6 =>  true // porque  12 es divisible entre 2 y 6
+
+*Solución:*
+
+    const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
+
+[Fuente aquí](https://www.codewars.com/kata/5545f109004975ea66000086)
+
+8. **Par o impar**: Crea una función devuelva si un número es par o impar
+
+*Ejemplo:*
+
+     parOimpar(3) //Impar
+
+*Solución:*
+
+    const parOimpar = num => ( num % 2 === 0 ) ? 'Par' : 'Impar'
+
+[Fuente aquí](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe)
+
+9. **Palabras reversas**: Implementa una función que acepte un _string_ como parámetro y devuelva todas las palabras del string en reverso, respetando los espacios.
+
+*Ejemplo:*
+
+     "¡Esto es un ejemplo!" ==> "¡otsE se nu !olpmeje"
+
+*Solución:*
+
+    const invertirPalabras = str => {
+          return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+    }
+
+[Fuente aquí](https://www.codewars.com/kata/5259b20d6021e9e14c0010d4)
 
 
 <!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:

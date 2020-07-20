@@ -2,11 +2,11 @@
 
 1. **'Primero y último'**: Crea una función que dada un _string_, remueva el primer y último caracter.
 
-*Ejemplo:*
+_Ejemplo:_
 
     remuevePrimerYUltimoCaracter('hola') // "ol"
 
-*Solución:*
+_Solución:_
 
     const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
 
@@ -14,12 +14,12 @@
 
 2. **Encuentra el más pequeño**: Dado un array de números, haz que la función devuelva el más pequeño entre ellos.
 
-*Ejemplo:*
+_Ejemplo:_
 
     const arr = [ 33, 2, 12, 65 ]
     encuentraElMasPequeño(arr) // 2
 
-*Solución:*
+_Solución:_
 
     const encuentraElMasPequeño = (arr) =>  Math.min.apply(null, arr)
 
@@ -29,12 +29,12 @@
 
 3. **Sumando**: Escribe una función que encuentre el resultado de sumar cada número del 1 al parámetro dado.
 
-*Ejemplo:*
+_Ejemplo:_
 
     sumando(2) -> 3
     1 + 2
 
-*Solución:*
+_Solución:_
 
     const sumando = (num) =>  {
         let result = 0;
@@ -46,22 +46,21 @@
 
 4. **Siglo**: Escribe una función que devuelva el siglo del año dado.
 
-*Ejemplo:*
+_Ejemplo:_
 
     sigloDeAño(1900)  returns (19)
 
-*Solución:*
+_Solución:_
 
     const sigloDeAño = año =>  Math.ceil(año/100)
 
- > Nota:  _Math.ceil_ lo que hace es redondear el número dado, luego lo dividimos entre 100 para que nos de el siglo  
+> Nota: _Math.ceil_ lo que hace es redondear el número dado, luego lo dividimos entre 100 para que nos de el siglo
 
 [Fuente aquí](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097)
 
-
 5. **Contando ovejas**: Dado un array, escribe un programa que devuelva el número de ovejas presentes (true).
 
-*Ejemplo:*
+_Ejemplo:_
 
     [true,  true,  true,  false,
     true,  true,  true,  true ,
@@ -70,22 +69,21 @@
     true,  true,  true,  true ,
     false, false, true,  true]
 
-*Solución:*
+_Solución:_
 
     const contandoOvejas = rebaño => rebaño.filter(Boolean).length
 
-> Nota:  Usamos la palabra `Boolean` para preguntar si es un `true`, el filter nos devuelve un array nuevo excluyendo los `false` y finalmente `.length` para saber la cantidad de ovejas presentes.
+> Nota: Usamos la palabra `Boolean` para preguntar si es un `true`, el filter nos devuelve un array nuevo excluyendo los `false` y finalmente `.length` para saber la cantidad de ovejas presentes.
 
 [Fuente aquí](https://www.codewars.com/kata/54edbc7200b811e956000556)
 
-
 6. **Operaiones simples**: Crea una función que acepte dos valores y un símbolo para ejecutar las operaciones matemáticas básicas.
 
-*Ejemplo:*
+_Ejemplo:_
 
     operacionBasica('*', 5, 5) //  25
 
-*Solución 1:*
+_Solución 1:_
 
     const operacionBasica = (operacion, valor1, valor2) => {
         switch (operacion) {
@@ -105,21 +103,21 @@
         }
     }
 
-*Solución 2:*
+_Solución 2:_
 
     const operacionBasica = (operacion, valor1, valor2) => eval(valor1+operacion+valor2)
 
- > La función _eval_ evalúa un string y lo ejecuta.
+> La función _eval_ evalúa un string y lo ejecuta.
 
 [Fuente aquí](https://www.codewars.com/kata/57356c55867b9b7a60000bd7)
 
 7. **Es divisible**: Crea una función que chequee si un número es divisible entre los parametro x, y dados.
 
-*Ejemplo:*
+_Ejemplo:_
 
     n =  12, x = 2, y = 6 =>  true // porque  12 es divisible entre 2 y 6
 
-*Solución:*
+_Solución:_
 
     const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
 
@@ -127,11 +125,11 @@
 
 8. **Par o impar**: Crea una función devuelva si un número es par o impar
 
-*Ejemplo:*
+_Ejemplo:_
 
      parOimpar(3) //Impar
 
-*Solución:*
+_Solución:_
 
     const parOimpar = num => ( num % 2 === 0 ) ? 'Par' : 'Impar'
 
@@ -139,18 +137,93 @@
 
 9. **Palabras reversas**: Implementa una función que acepte un _string_ como parámetro y devuelva todas las palabras del string en reverso, respetando los espacios.
 
-*Ejemplo:*
+_Ejemplo:_
 
      "¡Esto es un ejemplo!" ==> "¡otsE se nu !olpmeje"
 
-*Solución:*
+_Solución:_
 
     const invertirPalabras = str => {
-          return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+        return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
     }
 
 [Fuente aquí](https://www.codewars.com/kata/5259b20d6021e9e14c0010d4)
 
+10. **FizzBuzz**: Escribe un programa imprima todos los números del 1 a 100, con dos excepciones. Para números divisibles por 3, imprima "Fizz" en lugar del número, y para los números divisibles entre 5 (y no 3), imprima "Buzz" en su lugar. Cuando lo tengas funcionando, modifica tu programa para imprimir "FizzBuzz", para los números que son divisibles entre 3 y 5
+
+_Solución 1:_
+
+    const FizzBuzz = () => {
+        for (i = 1; i <= 100; i++) {
+            let mensaje = ''
+            if(i % 3 === 0 && i % 5 === 0) {
+                mensaje = 'FizzBuzz'
+            } else if (i % 3 === 0) {
+                mensaje = 'Fizz'
+            } else if (i % 5 === 0) {
+                mensaje = 'Buzz'
+            } else {
+               mensaje = i
+            }
+            console.log(mensaje)
+        }
+    }
+
+_Solución 2:_
+
+    const FizzBuzz = () => {
+        for (i = 1; i <= 100; i++) {
+            let mensaje = ''
+            switch (true) {
+                case (i % 3 === 0 && i % 5 === 0):
+                mensaje = 'FizzBuzz'
+                break;
+
+                case (i % 3 === 0):
+                mensaje = 'Fizz'
+                break;
+
+                case (i % 5 === 0):
+                mensaje = 'Buzz'
+                break;
+
+                default:
+                mensaje = i
+            }
+            console.log(mensaje)
+        }
+    }
+
+_Solución 3:_
+
+> Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+
+    const isMultiple = (num, mod) => num % mod === 0
+
+    const FizzBuzz = () => {
+        for (i = 1; i <= 100; i++) {
+            let mensaje = ''
+            switch (true) {
+                case isMultiple(i, 15):
+                mensaje = 'FizzBuzz'
+                break;
+
+                case isMultiple(i, 3):
+                mensaje = 'Fizz'
+                break;
+
+                case isMultiple(i, 5):
+                mensaje = 'Buzz'
+                break;
+
+                default:
+                mensaje = i
+            }
+            console.log(mensaje)
+        }
+    }
+
+[Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
 
 <!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 

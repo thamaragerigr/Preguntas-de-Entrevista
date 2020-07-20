@@ -225,7 +225,7 @@ _Solución 3:_
 
 [Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
 
-8. **Suma de múltiplos**: Crea una función devuelva sla suma de todos los múltiplos de 3 y 5, contando desde el parámetro dado
+11. **Suma de múltiplos**: Crea una función devuelva sla suma de todos los múltiplos de 3 y 5, contando desde el parámetro dado
 
 _Ejemplo:_
 

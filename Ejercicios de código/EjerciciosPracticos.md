@@ -225,6 +225,50 @@ _Solución 3:_
 
 [Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
 
+8. **Suma de múltiplos**: Crea una función devuelva sla suma de todos los múltiplos de 3 y 5, contando desde el parámetro dado
+
+_Ejemplo:_
+
+    findSum(5) // 8 (3 + 5)
+
+_Solución 1:_
+
+    const findSum = (n) => {
+    let result = 0
+    for (let i = 0; i <= n; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+        result = result + i
+        }
+    }
+    return result
+    }
+
+_Solución 2:_
+
+ > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+
+    const isMultiple = (num, mod) => num % mod === 0
+
+    const findSum = (n) => {
+    let result = 0
+    for (let i = 0; i <= n; i++) {
+        switch (true) {
+        case isMultiple(i, 3):
+            result = result + i
+            break;
+        case isMultiple(i, 5):
+            result = result + i
+            break;  
+        default: result = result  
+        }
+    }
+    return result
+    }
+
+
+[Fuente aquí](https://www.codewars.com/kata/57f36495c0bb25ecf50000e7/train/javascript)
+
+
 <!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 
         isPrime(0)                          // false

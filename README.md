@@ -1,5 +1,6 @@
 <div align="center">
-  <h1>Preguntas de Entrevista 💅</h1>
+ 
+  <img src="./readme.png" alt="Preguntas de entrevista"/>
 
   <a class="header-badge" target="_blank" href="linkedin.com/in/thamaragerigr">
      <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">

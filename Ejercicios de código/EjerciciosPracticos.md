@@ -245,7 +245,7 @@ _Solución 1:_
 
 _Solución 2:_
 
- > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+> Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
 
     const isMultiple = (num, mod) => num % mod === 0
 
@@ -258,16 +258,140 @@ _Solución 2:_
             break;
         case isMultiple(i, 5):
             result = result + i
-            break;  
-        default: result = result  
+            break;
+        default: result = result
         }
     }
     return result
     }
 
-
 [Fuente aquí](https://www.codewars.com/kata/57f36495c0bb25ecf50000e7/train/javascript)
 
+12. **Duplicado**: Dado un array, crea una función que devuelva el mismo duplicado.
+
+_Ejemplo:_
+
+     duplica([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+
+_Solución:_
+
+    const duplica = arr => {
+        result = arr
+        arr.map( item => {{
+            result.push(item)
+        }})
+        return result
+    }
+
+[Fuente aquí](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/src/questions/javascript-questions.md)
+
+13. **Variable global accidental**: ¿Cuál es el resultado de `typeof a` y `typeof b` de acuerdo con el siguiente código?
+
+_Código:_
+
+     function foo() {
+        let a = b = 0;
+        a++;
+        return a;
+    }
+
+    foo();
+    typeof a; // => ???
+    typeof b; // => ???
+
+_Solución:_
+
+    typeof a;        // => 'undefined'
+    typeof window.b; // => 'number'
+
+- `let a = b = 0` declara una variable local _a_, pero también una global con _b_.
+- Como no hemos declarado explicitamente la variable _b_, JavaScript lo interpreta `b = 0` como `window.b = 0`, por lo que su scope es global.
+- Como resultado esto es lo que se interpreta:
+
+```
+function foo() {
+    let a;
+    window.b = 0;
+    a = window.b;
+    a++;
+    return a;
+}
+```
+
+- Por lo tanto, `typeof a` es `undefined`. `a` existe dentro del scope de foo() y no esta disponible fuera de ella. En cambio `b`, al ser una variable global, devuelve `'number'`.
+
+[Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
+
+14. **Array length**: Cual es el valor de ropa[0]:
+
+_Código:_
+
+    const ropa = ['chaqueta', 'camiseta'];
+    ropa.length = 0;
+
+    ropa[0]; // => ???
+
+_Solución:_
+ropa[0] es igual a `undefined` ya que cuando se ejecuta `ropa.length = 0` se eliminan todos los elementos del array.
+
+[Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
+
+15. **Ojo de águila**: Cuál es el contenido de `numbers`:
+
+_Código:_
+
+    const length = 4;
+    const numbers = [];
+    for (var i = 0; i < length; i++);{
+        numbers.push(i + 1);
+    }
+
+    numbers; // => ???
+
+_Solución:_
+
+El `;` que va después de `for (var i = 0; i < length; i++)` provoca que el for loop sea nulo, por lo que no se ejecuta `numbers.push(i + 1);`
+
+    const length = 4;
+    const numbers = [];
+    var i;
+    for (i = 0; i < length; i++) {
+         // does nothing
+    }
+    { 
+        // a simple block
+        numbers.push(i + 1);
+    }
+
+    numbers; // => [5]
+
+Lo que en realidad sucede es que `i` aumenta 4 veces y luego se pasa a la parte del código en donde se agrega al array de `numbers`, resultando en 5.
+
+[Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
+
+16. **Semicoma automática**: ¿Qué devuelve esta función?:
+
+_Código:_
+
+    function arrayFromValue(item) {
+        return
+            [item];
+    }
+
+    arrayFromValue(10); // => ???
+
+_Solución:_
+
+La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, por lo que JavaScript entiende:
+
+    function arrayFromValue(item) {
+        return;
+        [item];
+    }
+
+    arrayFromValue(10); // => undefined
+    
+[Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
 <!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 
@@ -283,3 +407,6 @@ _Solución 2:_
               num % i === 0 ? false : true
             }
         } -->
+
+<!-- This week’s question:
+Given a decimal number as N, convert N into an equivalent irreducible fraction. An irreducible fraction is a fraction in which numerator and denominator are co-primes i.e., they have no other common divisor other than 1. -->

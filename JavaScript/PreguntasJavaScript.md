@@ -155,7 +155,7 @@ console.log(x); // 1
 
 Todos los objetos en JS poseen una propiedad `_proto_`, la cual hace referencia a otro objeto, el cual es llamado el prototipo del objeto. Cuando se accede a una propiedad a través de un objeto y no es encontrada, se buscará en el `_proto_` del objeto hasta conseguir lo que esta buscando.
 
-## ¿Qué son `closures`? ¿Por qué y para qué usarlas?
+<!-- ## ¿Qué son `closures`? ¿Por qué y para qué usarlas? -->
 
 <!-- 
 ## Diferencia entre clase y funcion

@@ -393,6 +393,50 @@ La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, p
     
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
+<!--  17. **Contando valles**: Gary es un ávido excursionista. Hace un seguimiento meticuloso de sus caminatas, prestando especial atención a pequeños detalles como la topografía. Durante su última caminata, dio exactamente los pasos. Por cada paso que daba, observaba si era un paso cuesta arriba o cuesta abajo. Las caminatas de Gary comienzan y terminan a nivel del mar y cada paso hacia arriba o hacia abajo representa un cambio de unidad en la altitud. Definimos los siguientes términos:
+
+Una montaña es una secuencia de pasos consecutivos sobre el nivel del mar, comenzando con un paso desde el nivel del mar y terminando con un paso hacia el nivel del mar.
+Un valle es una secuencia de pasos consecutivos debajo del nivel del mar, comenzando con un paso hacia abajo desde el nivel del mar y terminando con un paso hacia el nivel del mar.
+Dada la secuencia de pasos de Gary durante su última caminata, encuentre e imprima la cantidad de valles por los que caminó.
+
+Por ejemplo, si el camino de Gary es s= [UDDDUDUU], primero ingresa a un valle de 2 profundidades. Luego se sube a una unidad de montaña de altura. Finalmente, regresa al nivel del mar y termina su caminata.
+
+_Solución:_
+        function countingValleys(n, s) {
+           // n => number of steps = number of letters in string
+           // s => U for up/ D for down
+           // return the number of valleys Gary went through, taking into considetation the sea level
+
+           // steps: 
+           // 1. I need to convert the string given into array of separeted letters
+           const journey = s.split('')
+           // 2. Creating a reference to sea level
+           let seaLevel = 0
+           // 3. Also creating one for valleys = the value that should be return
+           let valleys = 0
+           let isValley = false
+           // 4. looping through each letter and adding or substracting to sea level / in every loop checking if seaLevel is 0, if so adding 1 to valleys
+           for (let i = 0; i <= n; i++) {
+               if (journey[i] === 'D') {
+                 seaLevel = seaLevel - 1
+                 console.log(seaLevel)
+                 if (seaLevel === 0) {
+                   valleys++
+                 }
+               } else if (journey[i] === 'U') {
+                  seaLevel++
+                  console.log(seaLevel)
+                  if (seaLevel === 0) {
+                   valleys++
+                  }
+               }
+           }
+           return valleys
+        }
+    
+[Fuente aquí](https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) -->
+
+
 <!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 
         isPrime(0)                          // false

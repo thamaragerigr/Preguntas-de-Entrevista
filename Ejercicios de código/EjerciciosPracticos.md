@@ -393,64 +393,33 @@ La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, p
     
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
-<!--  17. **Contando valles**: Gary es un ávido excursionista. Hace un seguimiento meticuloso de sus caminatas, prestando especial atención a pequeños detalles como la topografía. Durante su última caminata, dio exactamente los pasos. Por cada paso que daba, observaba si era un paso cuesta arriba o cuesta abajo. Las caminatas de Gary comienzan y terminan a nivel del mar y cada paso hacia arriba o hacia abajo representa un cambio de unidad en la altitud. Definimos los siguientes términos:
+17. **Pangrama**: Un pangrama es una oración que contiene cada letra del alfabeto al menos una vez. Por ejemplo, la oración "El zorro marrón rápido salta sobre el perro perezoso" es un pangrama, porque usa las letras A-Z al menos una vez (el caso es irrelevante).
 
-Una montaña es una secuencia de pasos consecutivos sobre el nivel del mar, comenzando con un paso desde el nivel del mar y terminando con un paso hacia el nivel del mar.
-Un valle es una secuencia de pasos consecutivos debajo del nivel del mar, comenzando con un paso hacia abajo desde el nivel del mar y terminando con un paso hacia el nivel del mar.
-Dada la secuencia de pasos de Gary durante su última caminata, encuentre e imprima la cantidad de valles por los que caminó.
-
-Por ejemplo, si el camino de Gary es s= [UDDDUDUU], primero ingresa a un valle de 2 profundidades. Luego se sube a una unidad de montaña de altura. Finalmente, regresa al nivel del mar y termina su caminata.
+Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False si no. Ignorar números y puntuación.
 
 _Solución:_
-        function countingValleys(n, s) {
-           // n => number of steps = number of letters in string
-           // s => U for up/ D for down
-           // return the number of valleys Gary went through, taking into considetation the sea level
 
-           // steps: 
-           // 1. I need to convert the string given into array of separeted letters
-           const journey = s.split('')
-           // 2. Creating a reference to sea level
-           let seaLevel = 0
-           // 3. Also creating one for valleys = the value that should be return
-           let valleys = 0
-           let isValley = false
-           // 4. looping through each letter and adding or substracting to sea level / in every loop checking if seaLevel is 0, if so adding 1 to valleys
-           for (let i = 0; i <= n; i++) {
-               if (journey[i] === 'D') {
-                 seaLevel = seaLevel - 1
-                 console.log(seaLevel)
-                 if (seaLevel === 0) {
-                   valleys++
-                 }
-               } else if (journey[i] === 'U') {
-                  seaLevel++
-                  console.log(seaLevel)
-                  if (seaLevel === 0) {
-                   valleys++
-                  }
-               }
-           }
-           return valleys
-        }
+    function isPangram(string){
+       const alphabeth = ('abcdefghijklmnopqrstuvwxyz').split('')
+       return alphabeth.every(x => string.toLowerCase().includes(x))
+    }
     
-[Fuente aquí](https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) -->
+[Fuente aquí](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)
 
 
-<!-- 1. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
+18. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 
-        isPrime(0)                          // false
-        isPrime(1)                          // false
-        isPrime(17)                         // true
-        isPrime(10000000000000)             // false
+        esPrimo(0)                          // false
+        esPrimo(1)                          // false
+        esPrimo(17)                         // true
+        esPrimo(10000000000000)             // false
 
 **Solución:**
 
         const esPrimo = (num) => {
-            for(i = 0; i <= num; i++) {
-              num % i === 0 ? false : true
+           for (let i = 2; i < num; i++) {
+               if (num % i === 0) {
+               return false; 
             }
-        } -->
-
-<!-- This week’s question:
-Given a decimal number as N, convert N into an equivalent irreducible fraction. An irreducible fraction is a fraction in which numerator and denominator are co-primes i.e., they have no other common divisor other than 1. -->
+            return true;
+        }  

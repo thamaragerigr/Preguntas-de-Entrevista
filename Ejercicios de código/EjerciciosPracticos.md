@@ -397,12 +397,22 @@ La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, p
 
 Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False si no. Ignorar números y puntuación.
 
-_Solución:_
+_Solución 1:_
 
     function isPangram(string){
        const alphabeth = ('abcdefghijklmnopqrstuvwxyz').split('')
        return alphabeth.every(x => string.toLowerCase().includes(x))
     }
+    
+_Solución 2:_
+
+    const abc = 'abcdefghijklmnopqrstuvwxyz'
+
+    const isPangram = (string) => {
+        const processedString = [...new Set(string.toLowerCase().split(' ').join(''))].sort().join('')
+        console.log(abc===processedString)
+    }
+
     
 [Fuente aquí](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)
 

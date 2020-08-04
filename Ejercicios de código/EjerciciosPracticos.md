@@ -433,3 +433,15 @@ _Solución 2:_
             }
             return true;
         }  
+
+19. **Producto de elementos adyacentes** - Crea una función que devuelva el mayor producto de dos elementos adyacentes en el array dado. Ejemplo:
+
+        inputArray = [3, 6, -2, -5, 7, 3]
+        adjacentElementsProduct(inputArray) = 21
+        //7 y 3 producen el producto más mayor.
+
+**Solución:**
+
+        function adjacentElementsProduct(arr) {
+          return Math.max( ...arr.slice(1).map(( x, i ) => [ x * arr[i]]))
+        }

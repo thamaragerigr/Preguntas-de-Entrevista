@@ -53,7 +53,7 @@ new ConstructorExample();
 // -> { value: 10 }
 ```
 
-2. Si applay`,`call`o`bind`son usados para llamar a una función, el`this` dentro de ella es un objeto que es pasado como argumento.
+2. Si `apply`,`call` o `bind` son usados para llamar a una función, el `this` dentro de ella es un objeto que es pasado como argumento.
 
 ```
 function fn() {
@@ -80,9 +80,9 @@ var obj = {
 obj.printThis(); // -> { value: 5, printThis: ƒ }
 ```
 
-> ⛔ Se puede decir que cuando hay un punto al lado izquierdo de la función (cuando se invoca), el `this` es el objeto a la izquier del punto.
+> ⛔ Se puede decir que cuando hay un punto al lado izquierdo de la función (cuando se invoca), el `this` es el objeto a la izquierda del punto.
 
-4. Si una función es invocada como una función libre, es decir, de ninguna de las manera previamente mencionadas, el `this`es el objeto global. En el navegador es `window`.
+4. Si una función es invocada como una función libre, es decir, de ninguna de las manera previamente mencionadas, el `this` es el objeto global. En el navegador es `window`.
 
 ```
 function fn() {
@@ -92,7 +92,7 @@ function fn() {
 fn(); // -> Window {stop: ƒ, open: ƒ, alert: ƒ, ...}
 ```
 
-> ⛔ Esta regla se diferencia de la nro 3 ya que una función que no es declarada como método automaticamente se convierte en propiedad del objeto global `window`. Esto es por ende, una invocación de un método implícito. Cuando llamamos a fn (), se interpreta como window.fn(), entonces `this` es `window`. 
+> ⛔ Esta regla se diferencia de la nº 3 ya que una función que no es declarada como método automaticamente se convierte en propiedad del objeto global `window`. Esto es por ende, una invocación de un método implícito. Cuando llamamos a fn (), se interpreta como window.fn(), entonces `this` es `window`. 
 
     console.log(fn === window.fn); // -> true
 

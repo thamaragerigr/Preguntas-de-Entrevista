@@ -445,3 +445,20 @@ _Solución 2:_
         function adjacentElementsProduct(arr) {
           return Math.max( ...arr.slice(1).map(( x, i ) => [ x * arr[i]]))
         }
+
+20. **Letra repetida** - Encuentra la primera letra que se repita dado una cadena de texto, si no se repite ninguna devuelve `-1`:
+
+        firstRepeat("Gandalf") ➞ "a"
+
+**Solución:**
+
+        function firstRepeat(str) {
+          for (i = 1; i < str.length; i++) {
+                if (str.slice(0,i).includes(str[i])) {
+                    return str[i]
+                }
+            }
+            return '-1'
+        }
+
+[Fuente aquí](https://edabit.com/challenge/aMyRSjKakeDauFfkX)

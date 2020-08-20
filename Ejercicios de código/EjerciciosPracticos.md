@@ -7,8 +7,14 @@ _Ejemplo:_
     remuevePrimerYUltimoCaracter('hola') // "ol"
     
 <details>
-    <summary>Solución:</summary>
-            const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
+   <summary>Solución:</summary>
+   <p>
+            
+        ```
+        const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
+        ```
+        
+   </p>     
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0)

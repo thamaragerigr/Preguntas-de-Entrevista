@@ -5,6 +5,15 @@
 _Ejemplo:_
 
     remuevePrimerYUltimoCaracter('hola') // "ol"
+    
+<details>
+    <summary>_Solución:_</summary>
+        <p>
+        ```
+        const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
+        ```
+        </p>
+</details>
 
 _Solución:_
 

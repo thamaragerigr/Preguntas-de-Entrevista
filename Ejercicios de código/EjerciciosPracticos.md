@@ -9,10 +9,8 @@ _Ejemplo:_
 <details>
    <summary>Solución:</summary>
    <p>
-            
-        ```
+       
         const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
-        ```
         
    </p>     
 </details>
@@ -25,10 +23,15 @@ _Ejemplo:_
 
     const arr = [ 33, 2, 12, 65 ]
     encuentraElMasPequeño(arr) // 2
-
-_Solución:_
-
-    const encuentraElMasPequeño = (arr) =>  Math.min.apply(null, arr)
+    
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+        const encuentraElMasPequeño = (arr) =>  Math.min.apply(null, arr)
+        
+   </p>     
+</details>
 
 > Nota: _Math.min_ no acepta matrices, por lo que se le debe agregar _apply_. El primer argumento de apply hace referencia al _this_ dentro de esa función. Pero como en este caso no es necesario usarlo, se puede pasar `null` o `undefined` y actuará igual.
 
@@ -40,14 +43,19 @@ _Ejemplo:_
 
     sumando(2) -> 3
     1 + 2
-
-_Solución:_
-
-    const sumando = (num) =>  {
-        let result = 0;
-        for (let i = 1; i <= num; i++) result += i
-        return result;
-    }
+    
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+        const sumando = (num) =>  {
+            let result = 0;
+            for (let i = 1; i <= num; i++) result += i;
+            return result;
+        }
+        
+   </p>     
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/55d24f55d7dd296eb9000030)
 
@@ -57,9 +65,14 @@ _Ejemplo:_
 
     sigloDeAño(1900)  returns (19)
 
-_Solución:_
-
-    const sigloDeAño = año =>  Math.ceil(año/100)
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+       const sigloDeAño = año =>  Math.ceil(año/100)
+       
+   </p>     
+</details>
 
 > Nota: _Math.ceil_ lo que hace es redondear el número dado, luego lo dividimos entre 100 para que nos de el siglo
 
@@ -75,10 +88,15 @@ _Ejemplo:_
     true,  false, false, true ,
     true,  true,  true,  true ,
     false, false, true,  true]
-
-_Solución:_
-
-    const contandoOvejas = rebaño => rebaño.filter(Boolean).length
+    
+ <details>
+   <summary>Solución:</summary>
+   <p>
+       
+       const contandoOvejas = rebaño => rebaño.filter(Boolean).length
+       
+   </p>     
+</details>
 
 > Nota: Usamos la palabra `Boolean` para preguntar si es un `true`, el filter nos devuelve un array nuevo excluyendo los `false` y finalmente `.length` para saber la cantidad de ovejas presentes.
 
@@ -89,30 +107,40 @@ _Solución:_
 _Ejemplo:_
 
     operacionBasica('*', 5, 5) //  25
-
-_Solución 1:_
-
-    const operacionBasica = (operacion, valor1, valor2) => {
-        switch (operacion) {
-            case '+':
-            return valor1 + valor2
-             break;
-            case '-':
-            return valor1 - valor2
-             break;
-            case '*':
-            return valor1 * valor2
-             break;
-            case '/':
-            return valor1 / valor2
-             break;
-            default: return valor1 + valor2
+   
+ <details>
+   <summary>Solución 1:</summary>
+   <p>
+       
+        const operacionBasica = (operacion, valor1, valor2) => {
+            switch (operacion) {
+                case '+':
+                return valor1 + valor2
+                 break;
+                case '-':
+                return valor1 - valor2
+                 break;
+                case '*':
+                return valor1 * valor2
+                 break;
+                case '/':
+                return valor1 / valor2
+                 break;
+                default: return valor1 + valor2
+            }
         }
-    }
 
-_Solución 2:_
+   </p>     
+</details>
 
-    const operacionBasica = (operacion, valor1, valor2) => eval(valor1+operacion+valor2)
+ <details>
+   <summary>Solución 2:</summary>
+   <p>
+       
+        const operacionBasica = (operacion, valor1, valor2) => eval(valor1+operacion+valor2)
+
+   </p>     
+</details>
 
 > La función _eval_ evalúa un string y lo ejecuta.
 
@@ -124,9 +152,14 @@ _Ejemplo:_
 
     n =  12, x = 2, y = 6 =>  true // porque  12 es divisible entre 2 y 6
 
-_Solución:_
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+        const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
 
-    const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
+   </p>     
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/5545f109004975ea66000086)
 
@@ -136,9 +169,14 @@ _Ejemplo:_
 
      parOimpar(3) //Impar
 
-_Solución:_
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+        const parOimpar = num => ( num % 2 === 0 ) ? 'Par' : 'Impar'
 
-    const parOimpar = num => ( num % 2 === 0 ) ? 'Par' : 'Impar'
+   </p>     
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe)
 
@@ -147,88 +185,108 @@ _Solución:_
 _Ejemplo:_
 
      "¡Esto es un ejemplo!" ==> "¡otsE se nu !olpmeje"
+     
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+        const invertirPalabras = str => {
+            return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+        }
 
-_Solución:_
-
-    const invertirPalabras = str => {
-        return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
-    }
+   </p>     
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/5259b20d6021e9e14c0010d4)
 
 10. **FizzBuzz**: Escribe un programa imprima todos los números del 1 a 100, con dos excepciones. Para números divisibles por 3, imprima "Fizz" en lugar del número, y para los números divisibles entre 5 (y no 3), imprima "Buzz" en su lugar. Cuando lo tengas funcionando, modifica tu programa para imprimir "FizzBuzz", para los números que son divisibles entre 3 y 5
 
-_Solución 1:_
-
-    const FizzBuzz = () => {
-        for (i = 1; i <= 100; i++) {
-            let mensaje = ''
-            if(i % 3 === 0 && i % 5 === 0) {
-                mensaje = 'FizzBuzz'
-            } else if (i % 3 === 0) {
-                mensaje = 'Fizz'
-            } else if (i % 5 === 0) {
-                mensaje = 'Buzz'
-            } else {
-               mensaje = i
+<details>
+   <summary>Solución 1:</summary>
+   <p>
+       
+        const FizzBuzz = () => {
+            for (i = 1; i <= 100; i++) {
+                let mensaje = ''
+                if(i % 3 === 0 && i % 5 === 0) {
+                    mensaje = 'FizzBuzz'
+                } else if (i % 3 === 0) {
+                    mensaje = 'Fizz'
+                } else if (i % 5 === 0) {
+                    mensaje = 'Buzz'
+                } else {
+                   mensaje = i
+                }
+                console.log(mensaje)
             }
-            console.log(mensaje)
         }
-    }
 
-_Solución 2:_
+   </p>     
+</details>
 
-    const FizzBuzz = () => {
-        for (i = 1; i <= 100; i++) {
-            let mensaje = ''
-            switch (true) {
-                case (i % 3 === 0 && i % 5 === 0):
-                mensaje = 'FizzBuzz'
-                break;
 
-                case (i % 3 === 0):
-                mensaje = 'Fizz'
-                break;
+<details>
+   <summary>Solución 2:</summary>
+   <p>
+       
+        const FizzBuzz = () => {
+            for (i = 1; i <= 100; i++) {
+                let mensaje = ''
+                switch (true) {
+                    case (i % 3 === 0 && i % 5 === 0):
+                    mensaje = 'FizzBuzz'
+                    break;
 
-                case (i % 5 === 0):
-                mensaje = 'Buzz'
-                break;
+                    case (i % 3 === 0):
+                    mensaje = 'Fizz'
+                    break;
 
-                default:
-                mensaje = i
+                    case (i % 5 === 0):
+                    mensaje = 'Buzz'
+                    break;
+
+                    default:
+                    mensaje = i
+                }
+                console.log(mensaje)
             }
-            console.log(mensaje)
         }
-    }
 
-_Solución 3:_
+   </p>     
+</details>
 
-> Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+<details>
+   <summary>Solución 3:</summary>
+   > Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+   <p>
+       
+        const isMultiple = (num, mod) => num % mod === 0
 
-    const isMultiple = (num, mod) => num % mod === 0
+        const FizzBuzz = () => {
+            for (i = 1; i <= 100; i++) {
+                let mensaje = ''
+                switch (true) {
+                    case isMultiple(i, 15):
+                    mensaje = 'FizzBuzz'
+                    break;
 
-    const FizzBuzz = () => {
-        for (i = 1; i <= 100; i++) {
-            let mensaje = ''
-            switch (true) {
-                case isMultiple(i, 15):
-                mensaje = 'FizzBuzz'
-                break;
+                    case isMultiple(i, 3):
+                    mensaje = 'Fizz'
+                    break;
 
-                case isMultiple(i, 3):
-                mensaje = 'Fizz'
-                break;
+                    case isMultiple(i, 5):
+                    mensaje = 'Buzz'
+                    break;
 
-                case isMultiple(i, 5):
-                mensaje = 'Buzz'
-                break;
-
-                default:
-                mensaje = i
+                    default:
+                    mensaje = i
+                }
+                console.log(mensaje)
             }
-            console.log(mensaje)
         }
-    }
+
+   </p>     
+</details>
 
 [Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
 
@@ -238,39 +296,48 @@ _Ejemplo:_
 
     findSum(5) // 8 (3 + 5)
 
-_Solución 1:_
-
-    const findSum = (n) => {
-    let result = 0
-    for (let i = 0; i <= n; i++) {
-        if (i % 3 === 0 || i % 5 === 0) {
-        result = result + i
+<details>
+   <summary>Solución 1:</summary>
+   <p>
+       
+        const findSum = (n) => {
+            let result = 0
+            for (let i = 0; i <= n; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                result = result + i
+                }
+            }
+            return result
         }
-    }
-    return result
-    }
 
-_Solución 2:_
+   </p>     
+</details>
 
-> Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+<details>
+   <summary>Solución 2:</summary>
+   > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+   <p>
+       
+        const isMultiple = (num, mod) => num % mod === 0
 
-    const isMultiple = (num, mod) => num % mod === 0
-
-    const findSum = (n) => {
-    let result = 0
-    for (let i = 0; i <= n; i++) {
-        switch (true) {
-        case isMultiple(i, 3):
-            result = result + i
-            break;
-        case isMultiple(i, 5):
-            result = result + i
-            break;
-        default: result = result
+        const findSum = (n) => {
+            let result = 0
+            for (let i = 0; i <= n; i++) {
+                switch (true) {
+                case isMultiple(i, 3):
+                    result = result + i
+                    break;
+                case isMultiple(i, 5):
+                    result = result + i
+                    break;
+                default: result = result
+                }
+            }
+            return result
         }
-    }
-    return result
-    }
+
+   </p>     
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/57f36495c0bb25ecf50000e7/train/javascript)
 
@@ -280,15 +347,20 @@ _Ejemplo:_
 
      duplica([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 
-_Solución:_
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+         const duplica = arr => {
+            result = arr
+            arr.map( item => {{
+                result.push(item)
+            }})
+            return result
+        }
 
-    const duplica = arr => {
-        result = arr
-        arr.map( item => {{
-            result.push(item)
-        }})
-        return result
-    }
+   </p>     
+</details>
 
 [Fuente aquí](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/src/questions/javascript-questions.md)
 
@@ -306,26 +378,31 @@ _Código:_
     typeof a; // => ???
     typeof b; // => ???
 
-_Solución:_
-
-    typeof a;        // => 'undefined'
-    typeof window.b; // => 'number'
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+         typeof a;        // => 'undefined'
+         typeof window.b; // => 'number'
 
 - `let a = b = 0` declara una variable local _a_, pero también una global con _b_.
 - Como no hemos declarado explicitamente la variable _b_, JavaScript lo interpreta `b = 0` como `window.b = 0`, por lo que su scope es global.
 - Como resultado esto es lo que se interpreta:
 
-```
-function foo() {
-    let a;
-    window.b = 0;
-    a = window.b;
-    a++;
-    return a;
-}
-```
+        ```
+        function foo() {
+            let a;
+            window.b = 0;
+            a = window.b;
+            a++;
+            return a;
+        }
+       ```
 
 - Por lo tanto, `typeof a` es `undefined`. `a` existe dentro del scope de foo() y no esta disponible fuera de ella. En cambio `b`, al ser una variable global, devuelve `'number'`.
+
+   </p>     
+</details>
 
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
@@ -338,8 +415,12 @@ _Código:_
 
     ropa[0]; // => ???
 
-_Solución:_
-ropa[0] es igual a `undefined` ya que cuando se ejecuta `ropa.length = 0` se eliminan todos los elementos del array.
+<details>
+   <summary>Solución:</summary>
+   <p>
+     ropa[0] es igual a `undefined` ya que cuando se ejecuta `ropa.length = 0` se eliminan todos los elementos del array.
+   </p>     
+</details>
 
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
@@ -355,24 +436,26 @@ _Código:_
 
     numbers; // => ???
 
-_Solución:_
+<details>
+   <summary>Solución:</summary>
+   <p>
+    El `;` que va después de `for (var i = 0; i < length; i++)` provoca que el for loop sea nulo, por lo que no se ejecuta `numbers.push(i + 1);`
 
-El `;` que va después de `for (var i = 0; i < length; i++)` provoca que el for loop sea nulo, por lo que no se ejecuta `numbers.push(i + 1);`
+        const length = 4;
+        const numbers = [];
+        var i;
+        for (i = 0; i < length; i++) {
+             // does nothing
+        }
+        { 
+            // a simple block
+            numbers.push(i + 1);
+        }
 
-    const length = 4;
-    const numbers = [];
-    var i;
-    for (i = 0; i < length; i++) {
-         // does nothing
-    }
-    { 
-        // a simple block
-        numbers.push(i + 1);
-    }
+        numbers; // => [5]
 
-    numbers; // => [5]
-
-Lo que en realidad sucede es que `i` aumenta 4 veces y luego se pasa a la parte del código en donde se agrega al array de `numbers`, resultando en 5.
+   Lo que en realidad sucede es que `i` aumenta 4 veces y luego se pasa a la parte del código en donde se agrega al array de `numbers`, resultando en 5.   </p>     
+</details>
 
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
@@ -386,10 +469,11 @@ _Código:_
     }
 
     arrayFromValue(10); // => ???
-
-_Solución:_
-
-La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, por lo que JavaScript entiende:
+    
+<details>
+   <summary>Solución:</summary>
+   <p>
+    La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, por lo que JavaScript entiende:
 
     function arrayFromValue(item) {
         return;
@@ -398,28 +482,40 @@ La función devuelve `undefined` porque  `[item];`esta en la siguiente línea, p
 
     arrayFromValue(10); // => undefined
     
+   </p>     
+</details>
+
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
 
 17. **Pangrama**: Un pangrama es una oración que contiene cada letra del alfabeto al menos una vez. Por ejemplo, la oración "El zorro marrón rápido salta sobre el perro perezoso" es un pangrama, porque usa las letras A-Z al menos una vez (el caso es irrelevante).
 
 Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False si no. Ignorar números y puntuación.
 
-_Solución 1:_
+<details>
+   <summary>Solución 1:</summary>
+   <p>
+       
+        function isPangram(string){
+           const alphabeth = ('abcdefghijklmnopqrstuvwxyz').split('')
+           return alphabeth.every(x => string.toLowerCase().includes(x))
+        }
+        
+   </p>     
+</details>
 
-    function isPangram(string){
-       const alphabeth = ('abcdefghijklmnopqrstuvwxyz').split('')
-       return alphabeth.every(x => string.toLowerCase().includes(x))
-    }
-    
-_Solución 2:_
+<details>
+   <summary>Solución 2:</summary>
+   <p>
+       
+        const abc = 'abcdefghijklmnopqrstuvwxyz'
 
-    const abc = 'abcdefghijklmnopqrstuvwxyz'
-
-    const isPangram = (string) => {
-        const processedString = [...new Set(string.toLowerCase().split(' ').join(''))].sort().join('')
-        console.log(abc===processedString)
-    }
-
+        const isPangram = (string) => {
+            const processedString = [...new Set(string.toLowerCase().split(' ').join(''))].sort().join('')
+            console.log(abc===processedString)
+        }
+        
+   </p>     
+</details>
     
 [Fuente aquí](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)
 
@@ -431,41 +527,56 @@ _Solución 2:_
         esPrimo(17)                         // true
         esPrimo(10000000000000)             // false
 
-**Solución:**
-
-        const esPrimo = (num) => {
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+         const esPrimo = (num) => {
            for (let i = 2; i < num; i++) {
                if (num % i === 0) {
                return false; 
             }
             return true;
         }  
+        
+   </p>     
+</details>
 
 19. **Producto de elementos adyacentes** - Crea una función que devuelva el mayor producto de dos elementos adyacentes en el array dado. Ejemplo:
 
         inputArray = [3, 6, -2, -5, 7, 3]
         adjacentElementsProduct(inputArray) = 21
         //7 y 3 producen el producto más mayor.
-
-**Solución:**
-
-        function adjacentElementsProduct(arr) {
-          return Math.max( ...arr.slice(1).map(( x, i ) => [ x * arr[i]]))
-        }
+        
+ <details>
+   <summary>Solución:</summary>
+   <p>
+       
+         function adjacentElementsProduct(arr) {
+           return Math.max( ...arr.slice(1).map(( x, i ) => [ x * arr[i]]))
+        } 
+        
+   </p>     
+</details>
 
 20. **Letra repetida** - Encuentra la primera letra que se repita dado una cadena de texto, si no se repite ninguna devuelve `-1`:
 
         firstRepeat("Gandalf") ➞ "a"
 
-**Solución:**
-
-        function firstRepeat(str) {
-          for (i = 1; i < str.length; i++) {
+<details>
+   <summary>Solución:</summary>
+   <p>
+       
+         function firstRepeat(str) {
+            for (i = 1; i < str.length; i++) {
                 if (str.slice(0,i).includes(str[i])) {
                     return str[i]
                 }
             }
             return '-1'
         }
+        
+   </p>     
+</details>
 
 [Fuente aquí](https://edabit.com/challenge/aMyRSjKakeDauFfkX)

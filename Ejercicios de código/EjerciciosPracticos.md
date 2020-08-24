@@ -1,36 +1,36 @@
-# Ejercicos Prácticos
+# Ejercicios Prácticos
 
 1. **'Primero y último'**: Crea una función que dada un _string_, remueva el primer y último caracter.
 
 _Ejemplo:_
 
     remuevePrimerYUltimoCaracter('hola') // "ol"
-    
+
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const remuevePrimerYUltimoCaracter = (str) => str.slice(1, -1)
-        
-   </p>     
+
+   </p>
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0)
 
-2. **Encuentra el más pequeño**: Dado un array de números, haz que la función devuelva el más pequeño entre ellos.
+2.**Encuentra el más pequeño**: Dado un array de números, haz que la función devuelva el más pequeño entre ellos.
 
 _Ejemplo:_
 
     const arr = [ 33, 2, 12, 65 ]
     encuentraElMasPequeño(arr) // 2
-    
+
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const encuentraElMasPequeño = (arr) =>  Math.min.apply(null, arr)
-        
-   </p>     
+
+   </p>
 </details>
 
 > Nota: _Math.min_ no acepta matrices, por lo que se le debe agregar _apply_. El primer argumento de apply hace referencia al _this_ dentro de esa función. Pero como en este caso no es necesario usarlo, se puede pasar `null` o `undefined` y actuará igual.
@@ -43,11 +43,11 @@ _Ejemplo:_
 
     sumando(2) -> 3
     1 + 2
-    
+
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const sumando = (num) =>  {
             let result = 0;
             for (let i = 1; i <= num; i++) result += i;
@@ -576,7 +576,30 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
             return '-1'
         }
         
-   </p>     
+   </p>
 </details>
 
 [Fuente aquí](https://edabit.com/challenge/aMyRSjKakeDauFfkX)
+
+21. **Número de caractéres** - Dada una cadena de texto (s) y una letra (c), devuelde el número de veces que aparece c en s.
+
+         numberOfCharacters(‘oh heavens’, ‘h’)
+         2
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+         function numberOfCharacters(s, c) {
+            let counter = 0
+            const character = c.toLowerCase()
+            const str = s.trim().toLowerCase().split('')
+            str.forEach( x => x === character ? ++counter : counter )
+            return counter
+        }
+
+        numberOfCharacters('woaw', 'W') // 2
+   </p>
+</details>
+
+[Fuente aquí](https://buttondown.email/cassidoo/archive/8fddad12-c45e-44f6-bda8-fd6adcf18dc4)

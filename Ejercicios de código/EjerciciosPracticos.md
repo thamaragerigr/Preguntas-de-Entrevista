@@ -67,7 +67,25 @@ _Ejemplo:_
     sigloDeAño(1900)  returns (19)
 
 <details>
-   <summary>Solución:</summary>
+   <summary>Solución 1:</summary>
+   <p>
+
+       function sigloDeAño(año) {
+           const siglo = año / 100
+
+           if (año % 100  === 0) {
+               return siglo
+           }
+
+           return Math.floor(siglo)+ 1
+       }
+
+   </p>
+
+</details>
+
+<details>
+   <summary>Solución 2:</summary>
    <p>
 
        const sigloDeAño = año =>  Math.ceil(año/100)
@@ -144,7 +162,7 @@ _Ejemplo:_
 
    </p>
 
-   > La función _eval_ evalúa un string y lo ejecuta.
+> La función _eval_ evalúa un string y lo ejecuta.
 
 </details>
 
@@ -289,7 +307,8 @@ _Ejemplo:_
 
    </p>
 
-   > Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+> Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+
 </details>
 
 [Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
@@ -342,7 +361,8 @@ _Ejemplo:_
 
    </p>
 
-   > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+> Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/57f36495c0bb25ecf50000e7/train/javascript)

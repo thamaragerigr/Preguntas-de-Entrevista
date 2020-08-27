@@ -1,6 +1,6 @@
 # Ejercicios Prácticos
 
-1. **'Primero y último'**: Crea una función que dada un _string_, remueva el primer y último caracter.
+1.**Primero y último**: Crea una función que dada un _string_, remueva el primer y último caracter.
 
 _Ejemplo:_
 
@@ -31,13 +31,14 @@ _Ejemplo:_
         const encuentraElMasPequeño = (arr) =>  Math.min.apply(null, arr)
 
    </p>
-</details>
 
-> Nota: _Math.min_ no acepta matrices, por lo que se le debe agregar _apply_. El primer argumento de apply hace referencia al _this_ dentro de esa función. Pero como en este caso no es necesario usarlo, se puede pasar `null` o `undefined` y actuará igual.
+> 💡 **Nota**: _Math.min_ no acepta matrices, por lo que se le debe agregar _apply_. El primer argumento de apply hace referencia al _this_ dentro de esa función. Pero como en este caso no es necesario usarlo, se puede pasar `null` o `undefined` y actuará igual.
+
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/55a2d7ebe362935a210000b2)
 
-3. **Sumando**: Escribe una función que encuentre el resultado de sumar cada número del 1 al parámetro dado.
+3.**Sumando**: Escribe una función que encuentre el resultado de sumar cada número del 1 al parámetro dado.
 
 _Ejemplo:_
 
@@ -53,13 +54,13 @@ _Ejemplo:_
             for (let i = 1; i <= num; i++) result += i;
             return result;
         }
-        
+
    </p>     
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/55d24f55d7dd296eb9000030)
 
-4. **Siglo**: Escribe una función que devuelva el siglo del año dado.
+4.**Siglo**: Escribe una función que devuelva el siglo del año dado.
 
 _Ejemplo:_
 
@@ -68,17 +69,18 @@ _Ejemplo:_
 <details>
    <summary>Solución:</summary>
    <p>
-       
-       const sigloDeAño = año =>  Math.ceil(año/100)
-       
-   </p>     
-</details>
 
-> Nota: _Math.ceil_ lo que hace es redondear el número dado, luego lo dividimos entre 100 para que nos de el siglo
+       const sigloDeAño = año =>  Math.ceil(año/100)
+
+   </p>
+
+> 💡 Nota: _Math.ceil_ lo que hace es redondear el número dado, luego lo dividimos entre 100 para que nos de el siglo
+
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097)
 
-5. **Contando ovejas**: Dado un array, escribe un programa que devuelva el número de ovejas presentes (true).
+5.**Contando ovejas**: Dado un array, escribe un programa que devuelva el número de ovejas presentes (true).
 
 _Ejemplo:_
 
@@ -88,30 +90,31 @@ _Ejemplo:_
     true,  false, false, true ,
     true,  true,  true,  true ,
     false, false, true,  true]
-    
+
  <details>
    <summary>Solución:</summary>
    <p>
-       
-       const contandoOvejas = rebaño => rebaño.filter(Boolean).length
-       
-   </p>     
-</details>
 
-> Nota: Usamos la palabra `Boolean` para preguntar si es un `true`, el filter nos devuelve un array nuevo excluyendo los `false` y finalmente `.length` para saber la cantidad de ovejas presentes.
+       const contandoOvejas = rebaño => rebaño.filter(Boolean).length
+
+   </p>
+
+> 💡 **Nota**: Usamos la palabra `Boolean` para preguntar si es un `true`, el filter nos devuelve un array nuevo excluyendo los `false` y finalmente `.length` para saber la cantidad de ovejas presentes.
+
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/54edbc7200b811e956000556)
 
-6. **Operaiones simples**: Crea una función que acepte dos valores y un símbolo para ejecutar las operaciones matemáticas básicas.
+6.**Operaiones simples**: Crea una función que acepte dos valores y un símbolo para ejecutar las operaciones matemáticas básicas.
 
 _Ejemplo:_
 
     operacionBasica('*', 5, 5) //  25
-   
+
  <details>
    <summary>Solución 1:</summary>
    <p>
-       
+
         const operacionBasica = (operacion, valor1, valor2) => {
             switch (operacion) {
                 case '+':
@@ -130,19 +133,20 @@ _Ejemplo:_
             }
         }
 
-   </p>     
+   </p>
 </details>
 
  <details>
    <summary>Solución 2:</summary>
    <p>
-       
+
         const operacionBasica = (operacion, valor1, valor2) => eval(valor1+operacion+valor2)
 
-   </p>     
-</details>
+   </p>
 
-> La función _eval_ evalúa un string y lo ejecuta.
+   > La función _eval_ evalúa un string y lo ejecuta.
+
+</details>
 
 [Fuente aquí](https://www.codewars.com/kata/57356c55867b9b7a60000bd7)
 
@@ -155,15 +159,15 @@ _Ejemplo:_
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
 
-   </p>     
+   </p>
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/5545f109004975ea66000086)
 
-8. **Par o impar**: Crea una función devuelva si un número es par o impar
+8.**Par o impar**: Crea una función devuelva si un número es par o impar
 
 _Ejemplo:_
 
@@ -172,10 +176,10 @@ _Ejemplo:_
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const parOimpar = num => ( num % 2 === 0 ) ? 'Par' : 'Impar'
 
-   </p>     
+   </p>
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe)
@@ -185,11 +189,11 @@ _Ejemplo:_
 _Ejemplo:_
 
      "¡Esto es un ejemplo!" ==> "¡otsE se nu !olpmeje"
-     
+
 <details>
    <summary>Solución:</summary>
    <p>
-       
+
         const invertirPalabras = str => {
             return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
         }
@@ -221,14 +225,12 @@ _Ejemplo:_
             }
         }
 
-   </p>     
+   </p>
 </details>
-
 
 <details>
    <summary>Solución 2:</summary>
    <p>
-       
         const FizzBuzz = () => {
             for (i = 1; i <= 100; i++) {
                 let mensaje = ''
@@ -252,14 +254,14 @@ _Ejemplo:_
             }
         }
 
-   </p>     
+   </p>
 </details>
 
 <details>
    <summary>Solución 3:</summary>
-   > Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
+
    <p>
-       
+
         const isMultiple = (num, mod) => num % mod === 0
 
         const FizzBuzz = () => {
@@ -285,12 +287,14 @@ _Ejemplo:_
             }
         }
 
-   </p>     
+   </p>
+
+   > Esta es la opción más mantenible, ya que permite que puedas agregar más posibles casos en un futuro.
 </details>
 
 [Fuente aquí](https://www.hackdoor.io/articles/96Nn4Q4E/about-coding-the-fizzbuzz-interview-question)
 
-11. **Suma de múltiplos**: Crea una función devuelva sla suma de todos los múltiplos de 3 y 5, contando desde el parámetro dado
+11. **Suma de múltiplos**: Crea una función devuelva las suma de todos los múltiplos de 3 y 5, contando desde el parámetro dado
 
 _Ejemplo:_
 
@@ -299,7 +303,7 @@ _Ejemplo:_
 <details>
    <summary>Solución 1:</summary>
    <p>
-       
+
         const findSum = (n) => {
             let result = 0
             for (let i = 0; i <= n; i++) {
@@ -310,14 +314,14 @@ _Ejemplo:_
             return result
         }
 
-   </p>     
+   </p>
 </details>
 
 <details>
    <summary>Solución 2:</summary>
-   > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
+
    <p>
-       
+
         const isMultiple = (num, mod) => num % mod === 0
 
         const findSum = (n) => {
@@ -336,7 +340,9 @@ _Ejemplo:_
             return result
         }
 
-   </p>     
+   </p>
+
+   > Más mantenible a largo plazo porque podemos agregar más casos en un futuro de manera mas fácil.
 </details>
 
 [Fuente aquí](https://www.codewars.com/kata/57f36495c0bb25ecf50000e7/train/javascript)
@@ -447,14 +453,15 @@ _Código:_
         for (i = 0; i < length; i++) {
              // does nothing
         }
-        { 
+        {
             // a simple block
             numbers.push(i + 1);
         }
 
         numbers; // => [5]
 
-   Lo que en realidad sucede es que `i` aumenta 4 veces y luego se pasa a la parte del código en donde se agrega al array de `numbers`, resultando en 5.   </p>     
+Lo que en realidad sucede es que `i` aumenta 4 veces y luego se pasa a la parte del código en donde se agrega al array de `numbers`, resultando en 5. </p>
+
 </details>
 
 [Fuente aquí](https://dmitripavlutin.com/simple-but-tricky-javascript-interview-questions/)
@@ -469,7 +476,7 @@ _Código:_
     }
 
     arrayFromValue(10); // => ???
-    
+
 <details>
    <summary>Solución:</summary>
    <p>
@@ -481,7 +488,7 @@ _Código:_
     }
 
     arrayFromValue(10); // => undefined
-    
+
    </p>     
 </details>
 
@@ -513,12 +520,11 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
             const processedString = [...new Set(string.toLowerCase().split(' ').join(''))].sort().join('')
             console.log(abc===processedString)
         }
-        
+
    </p>     
 </details>
     
 [Fuente aquí](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)
-
 
 18. **esPrimo** - Crea una función que devuelva `true`o `false` dependiendo del número que pases como parámetro. Ejemplo:
 
@@ -547,7 +553,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
         inputArray = [3, 6, -2, -5, 7, 3]
         adjacentElementsProduct(inputArray) = 21
         //7 y 3 producen el producto más mayor.
-        
+
  <details>
    <summary>Solución:</summary>
    <p>
@@ -599,6 +605,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
         }
 
         numberOfCharacters('woaw', 'W') // 2
+
    </p>
 </details>
 

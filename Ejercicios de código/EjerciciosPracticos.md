@@ -601,7 +601,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
             }
             return '-1'
         }
-        
+
    </p>
 </details>
 
@@ -631,7 +631,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
 
 [Fuente aquí](https://buttondown.email/cassidoo/archive/8fddad12-c45e-44f6-bda8-fd6adcf18dc4)
 
-22. **Llamada a API** - Haz una llamada a la API y obten 10 usuarios. Implementa la función `gerUsers()` que devuelve solo los nombres y emails de los usuarios que tengan una `m`en su nombre.
+22. **Llamada a API** - Haz una llamada a la API y obten información de los usuarios. Implementa una función que devuelve solo los nombres y emails de los usuarios que tengan una `m`en su nombre.
 
          consolo.log(getUsers('https://jsonplaceholder.typicode.com/users'))
          //[{name: Maria, email: meri99@gmail.com}, {name: Jaime, email: jaimegnz@gmail.com}]
@@ -641,14 +641,38 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
    <p>
 
         const getUsers = async () => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const users = await response.json()
-        
-        const result = users.filter( user => user.name.toLowerCase().includes('m')).map( user => ({ name: user.name, email: user.email }))
-        
-        return result
+            const response = await fetch('https://jsonplaceholder.typicode.com/users')
+            const users = await response.json()
+            
+            const result = users.filter( user => user.name.toLowerCase().includes('m')).map( user => ({ name: user.name, email: user.email }))
+            
+            return result
         
         }     
 
    </p>
 </details>
+
+23. **Isograma** - Dada una palabra, chequea si es un isograma o no.
+
+ > Un isograma es una palabra en la que no se repiten letras.
+
+        isIsogram('hilo')// true
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+        const isIsogram = (str) => {
+           const lowerCased = str.toLowerCase()
+           const result = lowerCased.split('').every((letter, i) => {
+               lowerCased.indexOf(letter) === i
+            })
+
+            return result
+        }     
+
+   </p>
+</details>
+
+[Fuente aquí](https://www.geeksforgeeks.org/check-string-isogram-not/)

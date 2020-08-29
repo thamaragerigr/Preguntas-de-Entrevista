@@ -630,3 +630,25 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
 </details>
 
 [Fuente aquí](https://buttondown.email/cassidoo/archive/8fddad12-c45e-44f6-bda8-fd6adcf18dc4)
+
+22. **Llamada a API** - Haz una llamada a la API y obten 10 usuarios. Implementa la función `gerUsers()` que devuelve solo los nombres y emails de los usuarios que tengan una `m`en su nombre.
+
+         consolo.log(getUsers('https://jsonplaceholder.typicode.com/users'))
+         //[{name: Maria, email: meri99@gmail.com}, {name: Jaime, email: jaimegnz@gmail.com}]
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+        const getUsers = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const users = await response.json()
+        
+        const result = users.filter( user => user.name.toLowerCase().includes('m')).map( user => ({ name: user.name, email: user.email }))
+        
+        return result
+        
+        }     
+
+   </p>
+</details>

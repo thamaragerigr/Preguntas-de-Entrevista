@@ -178,7 +178,7 @@ _Ejemplo:_
    <summary>Solución:</summary>
    <p>
 
-        const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 ) ? true : false
+        const esDivisible = ( num, x, y ) => ( num % x === 0 && num % y === 0 )
 
    </p>
 </details>
@@ -676,3 +676,21 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
 </details>
 
 [Fuente aquí](https://www.geeksforgeeks.org/check-string-isogram-not/)
+
+24. **Año bisiesto** - Crea una función que, dado un año, devuelva si este es bisiesto o no.
+
+ > Los años bisiestos ocurren cada cuatro años (aquellos divisibles entre cuatro), exeptuando los cientos a menos de que sea divisible entre 400
+
+        isLeapYear('2020')// true
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+        const isLeapYear = (year) => {
+          const yearInNumber = Number(year)
+          return yearInNumber % 100 === 0 ? yearInNumber % 400 === 0 : yearInNumber % 4 === 0
+        }     
+
+   </p>
+</details>

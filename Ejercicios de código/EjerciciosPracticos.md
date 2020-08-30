@@ -677,7 +677,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
 
 [Fuente aquí](https://www.geeksforgeeks.org/check-string-isogram-not/)
 
-24. **Año bisiesto** - Crea una función que, dado un año, devuelva si este es bisiesto o no.
+24.**Año bisiesto** - Crea una función que, dado un año, devuelva si este es bisiesto o no.
 
  > Los años bisiestos ocurren cada cuatro años (aquellos divisibles entre cuatro), exeptuando los cientos a menos de que sea divisible entre 400
 
@@ -691,6 +691,27 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
           const yearInNumber = Number(year)
           return yearInNumber % 100 === 0 ? yearInNumber % 400 === 0 : yearInNumber % 4 === 0
         }     
+
+   </p>
+</details>
+
+25.*Encode/Decode** - Crea una función `encode` que tome un `string` como parámetro e implemente el patrón 'Run-length'.
+
+ > El patrón Run-length toma los elementos consecutivos y los reemplaza por el valor seguido del número de veces que aparece.
+
+        encode('hhqqq')// h2q3
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+        const encode = (string)=>{
+            return string.replace(/(\w)\1+/g, (m,v) => `${m.length}${v}`)
+        }
+
+        const decode = (string)=>{
+            return string.replace(/(\d+)(\w)/g, (x,y,z) => z.repeat(y))
+        }
 
    </p>
 </details>

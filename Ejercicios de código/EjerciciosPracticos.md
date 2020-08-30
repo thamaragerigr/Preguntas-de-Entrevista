@@ -643,19 +643,19 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
         const getUsers = async () => {
             const response = await fetch('https://jsonplaceholder.typicode.com/users')
             const users = await response.json()
-            
+
             const result = users.filter( user => user.name.toLowerCase().includes('m')).map( user => ({ name: user.name, email: user.email }))
-            
+
             return result
-        
-        }     
+
+        }
 
    </p>
 </details>
 
 23. **Isograma** - Dada una palabra, chequea si es un isograma o no.
 
- > Un isograma es una palabra en la que no se repiten letras.
+> Un isograma es una palabra en la que no se repiten letras.
 
         isIsogram('hilo')// true
 
@@ -670,7 +670,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
             })
 
             return result
-        }     
+        }
 
    </p>
 </details>
@@ -679,7 +679,7 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
 
 24.**Año bisiesto** - Crea una función que, dado un año, devuelva si este es bisiesto o no.
 
- > Los años bisiestos ocurren cada cuatro años (aquellos divisibles entre cuatro), exeptuando los cientos a menos de que sea divisible entre 400
+> Los años bisiestos ocurren cada cuatro años (aquellos divisibles entre cuatro), exeptuando los cientos a menos de que sea divisible entre 400
 
         isLeapYear('2020')// true
 
@@ -690,14 +690,14 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
         const isLeapYear = (year) => {
           const yearInNumber = Number(year)
           return yearInNumber % 100 === 0 ? yearInNumber % 400 === 0 : yearInNumber % 4 === 0
-        }     
+        }
 
    </p>
 </details>
 
-25.*Encode/Decode** - Crea una función `encode` que tome un `string` como parámetro e implemente el patrón 'Run-length'.
+25.\*Encode/Decode\*\* - Crea una función `encode` que tome un `string` como parámetro e implemente el patrón 'Run-length'.
 
- > El patrón Run-length toma los elementos consecutivos y los reemplaza por el valor seguido del número de veces que aparece.
+> El patrón Run-length toma los elementos consecutivos y los reemplaza por el valor seguido del número de veces que aparece.
 
         encode('hhqqq')// h2q3
 
@@ -705,12 +705,29 @@ Dada una cadena, detecta si es o no un pangrama. Devuelve True si es así, False
    <summary>Solución:</summary>
    <p>
 
-        const encode = (string)=>{
+        const encode = (string) => {
             return string.replace(/(\w)\1+/g, (m,v) => `${m.length}${v}`)
         }
 
-        const decode = (string)=>{
+        const decode = (string) => {
             return string.replace(/(\d+)(\w)/g, (x,y,z) => z.repeat(y))
+        }
+
+   </p>
+</details>
+
+26.\*Elimina duplicados\*\* - Dado un `array`, implementa una función que remueva los elementos duplicados usando array.reduce()
+
+        removeDuplicates(['perro', 'perro', 'gato']) // ['perro', 'gato']
+
+<details>
+   <summary>Solución:</summary>
+   <p>
+
+        const encode = (arr) => {
+            return arr.reduce(( accumulator, value ) => {
+                return accumulator.includes(value) ? accumulator : [ ...accumulator, value ]
+            }, [])
         }
 
    </p>
